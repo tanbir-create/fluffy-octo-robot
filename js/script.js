@@ -86,16 +86,9 @@ if (h > 54) {
 
 
 $('.expand-image').click(function() {
-    if($(this).hasClass('boro')){
-        $(this).removeClass('boro')
-        $(this).children('img').removeClass('abar-boro')
-        return
-    }
-
-    $(this).addClass('boro')
-    $(this).children('img').addClass('abar-boro')
-
-
+    
+ 
+    this.requestFullScreen()
     
 })
 
