@@ -84,11 +84,18 @@ if (h > 54) {
 }
 
 
+$('.expand-image img').click(function() {
 
-$('.expand-image').click(function() {
-    
- 
-    this.requestFullScreen()
+   
+    if(document.fullscreenElement){
+        document.exitFullscreen()
+    }else{
+
+        this.requestFullscreen()
+    }
+    return
+    const rfs = this.requestFullscreen || this.webkitRequestFullScreen || this.mozRequestFullScreen || this.msRequestFullscreen;
+    rfs.call(this);
+   
     
 })
-
