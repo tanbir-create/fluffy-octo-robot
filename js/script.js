@@ -6,10 +6,7 @@ let lineIcon = $(".line-icon");
 audio.src = "images/M83 - Outro.mp3";
 
 if (audio) {
-  $("audio").on("loadedmetadata", function () {
-    let { mins, sec } = getTimeLeft(audio.duration);
-    $(".time").text(mins + ":" + sec + "'");
-  });
+  
 
   $("#astro-audio").click(function () {
     if (audio.paused) {
@@ -37,6 +34,11 @@ if (audio) {
       let { mins, sec } = getTimeLeft(audio.duration);
       $(".time").text(mins + ":" + sec);
     }
+  });
+  
+  $("audio").on("loadedmetadata", function () {
+    let { mins, sec } = getTimeLeft(audio.duration);
+    $(".time").text(mins + ":" + sec + "'");
   });
 
   function getTimeLeft(distance) {
